@@ -27,5 +27,5 @@ This is based on [pushNotification library](https://pypi.python.org/pypi?name=pu
 # Installation
 
 ```sh
-pip install notify-me
+pip install pushNotification notify-me
 ```
