@@ -5,6 +5,7 @@ This program runs a program and notify you by SMTP email and/or push notificatio
  notify-me OPTIONS Command
 
  Options
+
     --notify-to=mail1,mail2    send an email when done to the following mails
     --notify-push              send a push notification
     --notify-OK=               send this message after success
