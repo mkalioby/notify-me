@@ -13,7 +13,9 @@ This program runs a program and notify you by SMTP email and/or push notificatio
     --notify-topic=            the topic to send on if different than default queue
     --notify-name=             name of the job, to put it subject or push notifications
     --no-notify-send-out       don't send the stderr and stdout in the email.
-
+    
+ 
+ 
  **Example**
 
  notify-me  --notify-to=someone@example.com,someone2@example.com --notify-push --notify-OK="System Updated" --notify-ERR="System Update Failed" --notify-name="System Update" --notify-topic="Admin" sudo apt-get upgrade
@@ -21,3 +23,9 @@ This program runs a program and notify you by SMTP email and/or push notificatio
 # Requirements
 
 This is based on [pushNotification library](https://pypi.python.org/pypi?name=pushNotification), available on pip
+
+# Installation
+
+```sh
+pip install notify-me
+```
