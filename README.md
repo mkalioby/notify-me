@@ -29,3 +29,7 @@ This is based on [pushNotification library](https://pypi.python.org/pypi?name=pu
 ```sh
 pip install pushNotification notify-me
 ```
+
+# Configuration
+
+You can configure the SMTP and push notification through /etc/notiy-me.cfg or ~/.notify-me.cfg
