@@ -20,3 +20,5 @@ default_subject=config.get("EMAIL","DEFAULT-SUBJECT")
 OK_MESSAGE=config.get("EMAIL","OK-MESSAGE")
 ERR_MESSAGE=config.get("EMAIL","ERR-MESSAGE")
 
+Notification_URL=config.get("NOTIFICATION_SERVER","URL")
+

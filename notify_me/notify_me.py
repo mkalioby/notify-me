@@ -5,6 +5,7 @@ import sys
 import Common
 import smail
 import pushNotification
+import urllib
 
 __author__ = 'mohamed'
 
@@ -16,6 +17,9 @@ failure = Config.ERR_MESSAGE
 send_output_by_email=True
 topic = Config.default_topic
 cmd=""
+def notification_push(message,topic):
+	if Config.Notification_URL!="":
+		urllib.urlopen(Config.Notification_URL+"push?topic=%s&message=%s"%(topic,urllib.quote(message)))
 
 if sys.argv[1]=="--help" or sys.argv[1]=="-h":
     print """
@@ -59,6 +63,7 @@ res = Common.run(cmd,True)
 if res[0] == 0:
     if push:
         pushNotification.push(subject+ " " + success,topic,Config.notification_key)
+        notification_push(subject+ " " + success,topic)
     if to_emails != []:
         subject+=" " + success
         if send_output_by_email:
@@ -71,6 +76,7 @@ if res[0] == 0:
 else:
     if push:
         pushNotification.push(subject + " " +failure,topic,Config.notification_key)
+        notification_push(subject+ " " + success,topic)
     if to_emails!=[]:
         subject+=" " + failure
         if send_output_by_email:
