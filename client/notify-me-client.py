@@ -1,9 +1,12 @@
 #! /usr/bin/python
-import urllib,simplejson,time,os
-if os.environ["DESKTOP_SESSION"]=="ubuntu" or os.environ["DESKTOP_SESSION"]=="gnome":
-	from gi.repository import Notify
-else:
-	import dbus
+import urllib,simplejson,time,os,platform
+
+if "Linux" in platform.platform:
+	OS="Linux"
+	if os.environ["DESKTOP_SESSION"]=="ubuntu" or os.environ["DESKTOP_SESSION"]=="gnome":
+		from gi.repository import Notify
+	else:
+		import dbus
 ids={}
 try:
 	ids=simplejson.loads(open(os.path.dirname(__file__)+"lastIDs").read())
