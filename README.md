@@ -4,6 +4,8 @@ This program runs a program and notify you by SMTP email, Android push notificat
 
 The internal notification server can be checked on Ubuntu/gnome, KDE or Mac OS X to get a notification.
 
+Just choose the appropiate client from client folder.
+
 
 ## Installation of notification checker 
 
