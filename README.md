@@ -2,7 +2,9 @@
 
 This program runs a program and notify you by SMTP email, Android push notification through [pushNotification](https://github.com/mkalioby/Python_Notifications) and/or internal notification server.
 
-The internal notification server can be checked on Ubuntu/gnome or Mac OS X to get a notification.
+The internal notification server can be checked on Ubuntu/gnome, KDE or Mac OS X to get a notification.
+
+Just choose the appropiate client from client folder.
 
 
 ## Installation of notification checker 
@@ -53,25 +55,29 @@ You can configure the SMTP and push notification through /etc/notiy-me.cfg or ~/
 
 Currently the server supports MySQL database as the back-end db. the server needs mod_python to work.
 
-	* Install Packages
-		```sh
-			$ sudo apt-get install libapache2-mod-python python-simplejson python-mysqldb
-		```
-	* Copy server code
-		```sh
-		$ sudo cp SRC/server /var/www/notify
-		```
-	* Configure Apache in 000-default
-		```xml
-		<Directory /var/www/notify/py>
-			SetHandler mod_python
+* Install Packages
+```sh
+$ sudo apt-get install libapache2-mod-python python-simplejson python-mysqldb
+```
+* Copy server code
+```sh
+	$ sudo cp SRC/server /var/www/notify
+```
+* Configure Apache in 000-default
+```xml
+	<Directory /var/www/notify/py>
+         	SetHandler mod_python
                 PythonHandler mod_python.publisher
-         </Directory>
-         ```
-     * Reload Apache
-     ```sh 
-     $ sudo service apache2 reload
-     ```
+        </Directory>
+```
+
+* Reload Apache
+  
+  ```sh 
+ $ sudo service apache2 reload
+ ```
+ 
+* Configure Server, Edit the configuration in /var/www/notify/config.cfg
      
 
 
