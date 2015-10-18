@@ -1,8 +1,8 @@
 # notify-me
 
-This program runs a program and notify you by SMTP email, Android push notification and/or internal notification server.
+This program runs a program and notify you by SMTP email, Android push notification through (pushNotification)[https://github.com/mkalioby/Python_Notifications] and/or internal notification server.
 
-The internal notification sever can be checked on Ubuntu to get genome notification and Mac OS X to get a notification.
+The internal notification server can be checked on Ubuntu/gnome or Mac OS X to get a notification.
 
 
 ## Installation of notification checker 
@@ -10,6 +10,11 @@ The internal notification sever can be checked on Ubuntu to get genome notificat
 ### Mac OS X
 
 sudo gem install terminal-notifier
+
+### Ubuntu/gnome
+sudo pip install gi
+
+## Options
 
 
  notify-me OPTIONS Command
