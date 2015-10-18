@@ -37,7 +37,7 @@ while True:
 				if  messages[0]["id"]>ids[topic]:
 					ids[topic]=messages[0]["id"]
 			for message in messages:
-					TerminalNotifier.Notify(message["Topic"]+": "+message["Message"],title="Notify-me")
+					TerminalNotifier.notify(message["Topic"]+": "+message["Message"],title="Notify-me")
 					time.sleep(5)
 	except: 
 		pass
