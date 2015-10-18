@@ -1,6 +1,16 @@
 # notify-me
 
-This program runs a program and notify you by SMTP email and/or push notification.
+This program runs a program and notify you by SMTP email, Android push notification and/or internal notification server.
+
+The internal notification sever can be checked on Ubuntu to get genome notification and Mac OS X to get a notification.
+
+
+## Installation of notification checker 
+
+### Mac OS X
+
+sudo gem install terminal-notifier
+
 
  notify-me OPTIONS Command
 
