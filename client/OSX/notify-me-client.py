@@ -7,7 +7,11 @@ if not platform.system() == 'Darwin':
 
 import urllib,simplejson,time,os,TerminalNotifier
 
-       
+ids={}
+try:
+	ids=simplejson.loads(open(os.path.dirname(__file__)+"lastIDs").read())
+except:
+	pass
 
 if not "NOTIFY_TOPICS" in os.environ or os.environ["NOTIFY_TOPICS"]=="":
 	print "No Topic to check, set NOTIFY_TOPICS env with comma seprated list for multiple topics"
