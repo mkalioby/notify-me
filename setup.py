@@ -3,7 +3,7 @@
 from distutils.core import setup
 
 setup(name='notify-me',
-      version='0.8',
+      version='0.9',
       description='Notify the user when a job is done or failed',
       author='Mohamed El-Kalioby',
       author_email='mkalioby@mkalioby.com',

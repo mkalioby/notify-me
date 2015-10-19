@@ -3,10 +3,9 @@ import urllib,simplejson,time,os,platform
 from gi.repository import Notify
 ids={}
 try:
-	ids=simplejson.loads(open(os.path.dirname(__file__)+"lastIDs").read())
+	ids=simplejson.loads(open(os.path.dirname(__file__)+"/lastIDs").read())
 except:
 	pass
-
 
 if not "NOTIFY_TOPICS" in os.environ or os.environ["NOTIFY_TOPICS"]=="":
 	print "No Topic to check, set NOTIFY_TOPICS env with comma seprated list for multiple topics"
@@ -18,13 +17,12 @@ if  "NOTIFY_SERVER" not in os.environ or os.environ["NOTIFY_SERVER"]=="" :
 notification_server=os.environ["NOTIFY_SERVER"]
 while True:
 	topics=os.environ["NOTIFY_TOPICS"].split(",")
-	print topics
 	try:
 		for topic in topics:
 			if topic not in ids:
 				ids[topic]=0
 			server=notification_server+"/get?topic=%s&id=%s"%(topic,ids[topic])
-	#		print server
+			print server
 			url=urllib.urlopen(server)
 			messages=simplejson.loads(url.read())
 			
