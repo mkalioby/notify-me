@@ -4,8 +4,9 @@ This program runs a program and notify you by SMTP email, Android push notificat
 
 The internal notification server can be checked on Ubuntu/gnome, KDE or Mac OS X to get a notification, just choose the appropiate client from client folder.
 
-iOS, Browsers and many other application are supported over [pushOver](https://pushover.net/). PushOver is a service where the user buy a one-time license for each platform.
+iOS, Browsers and many other application are supported over [pushOver](https://pushover.net/). PushOver is a cheap service where the user buy a one-time (round $5) license for each platform.
 
+The configuration parameters can be centeralized or customized per user.
 
 ## Installation of notification checker 
 
