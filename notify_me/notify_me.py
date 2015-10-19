@@ -1,11 +1,12 @@
 #!/usr/bin/env python
-print "Running"
+
 import Config
 import sys
 import Common
 import smail
 import pushNotification
 import urllib
+import pushOver
 
 __author__ = 'mohamed'
 
@@ -60,28 +61,23 @@ for arg in sys.argv[1:]:
         cmd += arg + " "
 print "Running:",cmd
 res = Common.run(cmd,True)
+message=""
+#print "Subject:",subject
+#print "Success:"+success
+#exit(0)
 if res[0] == 0:
-    if push:
-        pushNotification.push(subject+ " " + success,topic,Config.notification_key)
-        notification_push(subject+ " " + success,topic)
-    if to_emails != []:
-        subject+=" " + success
-        if send_output_by_email:
-            msg="<pre>"+res[1]+"</pre>"
-        else:
-            msg=success
-
-        for mail in to_emails:
-            smail.send(mail,subject,msg,Config.default_from)
+	message=subject+ " " + success
 else:
-    if push:
-        pushNotification.push(subject + " " +failure,topic,Config.notification_key)
-        notification_push(subject+ " " + success,topic)
-    if to_emails!=[]:
-        subject+=" " + failure
-        if send_output_by_email:
-            msg="<pre>"+res[1]+"</pre>"
-        else:
-            msg=failure
-        for mail in to_emails:
-            smail.send(mail,subject,msg,Config.default_from)
+	message=subject + " " +failure
+if push:
+	pushNotification.push(message,topic,Config.notification_key)
+	notification_push(message,topic)
+	pushOver.push(message)
+if to_emails != []:
+	subject+=" " + success
+	if send_output_by_email:
+		msg="<pre>"+res[1]+"</pre>"
+	else:
+		msg=success
+	for mail in to_emails:
+		smail.send(mail,subject,msg,Config.default_from)

@@ -2,9 +2,9 @@
 
 This program runs a program and notify you by SMTP email, Android push notification through [pushNotification](https://github.com/mkalioby/Python_Notifications) and/or internal notification server.
 
-The internal notification server can be checked on Ubuntu/gnome, KDE or Mac OS X to get a notification.
+The internal notification server can be checked on Ubuntu/gnome, KDE or Mac OS X to get a notification, just choose the appropiate client from client folder.
 
-Just choose the appropiate client from client folder.
+iOS, Browsers and many other application are supported over [pushOver](https://pushover.net/). PushOver is a service where the user buy a one-time license for each platform.
 
 
 ## Installation of notification checker 

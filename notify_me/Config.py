@@ -22,3 +22,6 @@ ERR_MESSAGE=config.get("EMAIL","ERR-MESSAGE")
 
 Notification_URL=config.get("NOTIFICATION_SERVER","URL")
 
+pushOver_App=config.get("PushOver","App")
+pushOver_User=config.get("PushOver","User")
+
