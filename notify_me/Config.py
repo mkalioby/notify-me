@@ -9,6 +9,8 @@ else:
     raise Exception("No config file found, put the configuration in /etc/notify-me.cfg or ~/.notify-me.cfg")
 
 notification_key = config.get("Notification-Key","key")
+if notification_key.strip()=="":
+	print "Warning: No Notification Key Provided, GCM support is disabled."
 default_topic=config.get("Notification-Key","default-topic")
 
 smtp_host = config.get("SMTP","SMTP-HOST")

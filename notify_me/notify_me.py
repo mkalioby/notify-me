@@ -4,10 +4,14 @@ import Config
 import sys
 import Common
 import smail
-import pushNotification
 import urllib
 import pushOver
-
+pushNotification=False
+try:
+	import pushNotification
+	pushNotification=True
+except:
+	pass
 __author__ = 'mohamed'
 
 to_emails = []
@@ -70,7 +74,8 @@ if res[0] == 0:
 else:
 	message=subject + " " +failure
 if push:
-	pushNotification.push(message,topic,Config.notification_key)
+	if pushNotification:
+		pushNotification.push(message,topic,Config.notification_key)
 	notification_push(message,topic)
 	pushOver.push(message)
 if to_emails != []:
