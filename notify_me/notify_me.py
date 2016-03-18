@@ -6,10 +6,10 @@ import Common
 import smail
 import urllib
 import pushOver
-pushNotification=False
+PushNotification=False
 try:
 	import pushNotification
-	pushNotification=True
+	PushNotification=True
 except:
 	pass
 __author__ = 'mohamed'
@@ -74,7 +74,7 @@ if res[0] == 0:
 else:
 	message=subject + " " +failure
 if push:
-	if pushNotification:
+	if PushNotification:
 		pushNotification.push(message,topic,Config.notification_key)
 	notification_push(message,topic)
 	pushOver.push(message)
