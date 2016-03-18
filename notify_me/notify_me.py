@@ -16,7 +16,7 @@ __author__ = 'mohamed'
 
 to_emails = []
 subject = Config.default_subject
-push = False
+push = Config.push
 success = Config.OK_MESSAGE
 failure = Config.ERR_MESSAGE
 send_output_by_email=True
@@ -51,6 +51,8 @@ for arg in sys.argv[1:]:
         to_emails = arg.split("=")[1].split(",")
     elif "--notify-push" in arg:
         push=True
+    elif "--no-notify-push" in arg:
+        push=False
     elif "--notify-OK=" in arg:
         success=arg.split("=")[1]
     elif "--notify-ERR=" in arg:

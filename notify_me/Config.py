@@ -27,3 +27,9 @@ Notification_URL=config.get("NOTIFICATION_SERVER","URL")
 pushOver_App=config.get("PushOver","App")
 pushOver_User=config.get("PushOver","User")
 
+push=False
+try:
+	if config.get("MISC","notify-push").upper()=="TRUE":
+		push=True
+except:
+	print "WARN: There is a problem in MISC section in config file, please update the config file to last version"
